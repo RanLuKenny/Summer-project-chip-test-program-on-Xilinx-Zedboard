@@ -1,0 +1,155 @@
+$date
+	Tue Jul  3 17:21:36 2018
+$end
+$version
+	ModelSim Version 10.7
+$end
+$timescale
+	1ns
+$end
+
+$scope module decoder_tb $end
+$var reg 1 ! clk $end
+$var reg 3 " din [2:0] $end
+$var wire 1 # dout [7] $end
+$var wire 1 $ dout [6] $end
+$var wire 1 % dout [5] $end
+$var wire 1 & dout [4] $end
+$var wire 1 ' dout [3] $end
+$var wire 1 ( dout [2] $end
+$var wire 1 ) dout [1] $end
+$var wire 1 * dout [0] $end
+
+$scope module p1 $end
+$var wire 1 + clk $end
+$var wire 1 , din [2] $end
+$var wire 1 - din [1] $end
+$var wire 1 . din [0] $end
+$var reg 8 / dout [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+b0 "
+bx /
+x*
+x)
+x(
+x'
+x&
+x%
+x$
+x#
+0.
+0-
+0,
+0+
+$end
+#1
+1!
+1+
+b11111110 /
+0*
+1)
+1(
+1'
+1&
+1%
+1$
+1#
+#2
+0!
+b1 "
+1.
+0+
+#3
+1!
+1+
+b11111101 /
+1*
+0)
+#4
+0!
+b10 "
+0.
+1-
+0+
+#5
+1!
+1+
+b11111011 /
+1)
+0(
+#6
+0!
+b11 "
+1.
+0+
+#7
+1!
+1+
+b11110111 /
+1(
+0'
+#8
+0!
+b100 "
+0.
+0-
+1,
+0+
+#9
+1!
+1+
+b11101111 /
+1'
+0&
+#10
+0!
+b101 "
+1.
+0+
+#11
+1!
+1+
+b11011111 /
+1&
+0%
+#12
+0!
+b110 "
+0.
+1-
+0+
+#13
+1!
+1+
+b10111111 /
+1%
+0$
+#14
+0!
+b111 "
+1.
+0+
+#15
+1!
+1+
+b1111111 /
+1$
+0#
+#16
+0!
+b0 "
+0.
+0-
+0,
+0+
+#17
+1!
+1+
+b11111110 /
+0*
+1#
