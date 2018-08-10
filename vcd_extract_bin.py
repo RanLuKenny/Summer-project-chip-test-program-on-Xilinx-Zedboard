@@ -3,10 +3,10 @@ import collections
 
 #python file for vcd imformation extraction
 # vcd_file_name = 'test_file.vcd'
-vcd_file_name = 'decoder_tb.vcd'
+vcd_file_name = 'tb.vcd'
 
-input_ports = ['din [2:0]']
-output_ports = ['dout [7:0]']
+input_ports = ['clk', 'mr', 'd0', 'd1', 'd2', 'd3']
+output_ports = ['q0', 'q_0', 'q1', 'q_1', 'q2', 'q_2', 'q3', 'q_3']
 
 ports = input_ports + output_ports
 
@@ -24,6 +24,8 @@ output_ports_dic = collections.OrderedDict()
 
 output_sequence = collections.OrderedDict()
 output_sequence_new = collections.OrderedDict()
+
+wf = open('data.txt', 'w')
 
 def handle_mul_bus(port_name, line):
     if ':' in port_name:
@@ -235,12 +237,11 @@ if __name__ == '__main__':
         # output_sequence[key] = store
     convert(output_sequence, output_sequence_new)
 
-    wf = open('data.txt', 'w')
-
     for key in output_sequence_new:
         temp = key.replace(' ', '') + output_sequence_new[key]
         print(temp)
         wf.write(temp + '\n')
-
-
-
+		
+size = ((len(output_sequence_new[input_ports[0]]) - 1) / 2)
+print('The simulation ends at T=' + str(size - 1))
+wf.write('The simulation ends at T=' + str(size))
