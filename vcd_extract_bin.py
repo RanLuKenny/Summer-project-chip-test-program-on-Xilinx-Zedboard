@@ -24,8 +24,7 @@ while line:
                     input_ports.append(str0)
             elif '[' not in str0:
                 if str0 not in input_ports and str0 not in output_ports:
-                    input_ports.append(str0)
-                    
+                    input_ports.append(str0)      
         elif remove[5:9] == 'wire':
             str1 = remove[14 : len(remove)-5]
             if ':' in str1:
