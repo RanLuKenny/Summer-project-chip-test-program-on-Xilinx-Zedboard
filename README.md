@@ -19,4 +19,7 @@ There 4 steps in the program design.
 -Run the python file (command.py) in terminal
     # python command.py
     
+-Compare the results
+    # diff data.txt text.txt
+    
 -Check the results
