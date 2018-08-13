@@ -22,7 +22,9 @@ There 4 steps in the program design.
     
 -Connect the chip according to pin sequence in "data.txt" file
 -run the executable file in terminal
+
     # ./runme
+
 -Compare the results
 
     # diff data.txt text.txt
