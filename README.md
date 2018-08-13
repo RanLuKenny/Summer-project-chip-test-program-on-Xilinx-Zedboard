@@ -1,4 +1,7 @@
 # Summer-project-chip-test-program-on-Xilinx-Zedboard
+# Coder: Ran Lu, Weixu Pan, Zihao Zhao
+# Date: 8/15/2018
+
 This is the real silicon chip test program on Xilinx Zedboard:
 
 There 4 steps in the program design.
@@ -22,7 +25,7 @@ There 4 steps in the program design.
     
 -Connect the chip according to pin sequence in "data.txt" file
 
--run the executable file in terminal
+-Run the executable file in terminal
 
     # ./runme
 
