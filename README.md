@@ -15,6 +15,8 @@ There 4 steps in the program design.
 
 # How to run the program? 
 -Download all the python script file and C file into Zedboard
+
 -Run the python file (command.py) in terminal
     # python command.py
+    
 -Check the results
