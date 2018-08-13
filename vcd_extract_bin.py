@@ -2,8 +2,8 @@
 import collections
 
 #python file for vcd imformation extraction
-vcd_file_name = 'top_module_tb.vcd'
-#vcd_file_name = 'tb.vcd'
+#vcd_file_name = 'top_module_tb.vcd'
+vcd_file_name = 'tb.vcd'
 
 input_ports = []
 output_ports = []
@@ -11,6 +11,8 @@ output_ports = []
 f = open(vcd_file_name)
 file_lines = []
 line = f.readline()
+
+#get the ports
 while line:
     line = f.readline()
     remove = line.strip('\t').strip('\n')
@@ -259,7 +261,7 @@ if __name__ == '__main__':
                 # print(empty_string)
         output_sequence[key] = ' ' + empty_string
         # print(empty_string)
-    # print(output_sequence)
+        # print(output_sequence)
         # output_sequence[key] = store
     convert(output_sequence, output_sequence_new)
 
@@ -270,4 +272,4 @@ if __name__ == '__main__':
 		
 size = ((len(output_sequence_new[input_ports[0]]) - 1) / 2)
 print('The simulation ends at T=' + str(size - 1))
-wf.write('The simulation ends at T=' + str(size))
+wf.write('The simulation ends at T=' + str(size - 1))
