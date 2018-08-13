@@ -14,7 +14,7 @@ There 4 steps in the program design.
 5. Compare the final results between chip outputs and temp file.
 
 # How to run the program? 
--Download all the python script file and C file into Zedboard
+-Download all the python script files and C files into Zedboard
 
 -Run the python file (command.py) in terminal
 
