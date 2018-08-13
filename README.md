@@ -3,7 +3,7 @@ This is the real silicon chip test program on Xilinx Zedboard:
 
 There 4 steps in the program design.
 
-1. Linux system (Xilinux) installation on FPGA Zedboard.
+1. Linux system (Xilinux) installation on Xilinx Zedboard.
 
 2. Extract test vector from '.vcd' file and store the vector into temp file.
 
