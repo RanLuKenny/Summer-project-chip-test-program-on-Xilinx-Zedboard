@@ -21,6 +21,7 @@ There 4 steps in the program design.
     # python command.py
     
 -Connect the chip according to pin sequence in "data.txt" file
+
 -run the executable file in terminal
 
     # ./runme
