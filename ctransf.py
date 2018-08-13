@@ -13,12 +13,10 @@ def def_signal():
   while output_num > 16:
     print('Number of outputs cannot be larger than 16 bits!:\n')
     output_num = input()
-  print('please set the clock frequency <DELAY = 10000000 equals clock cycle = 1s>:\n')
+  print('please set the testing frequency <DELAY = 10000000 equals testing frequency = 1s>:\n')
   delay = input()
-  print('please enter the test cycle value (the length of testing vector):\n')
-  test_cycle = input()
-  print('input_num :',input_num,'output_num :',output_num,'DELAY:', delay,'TEST_CYCLE:',test_cycle)
-  return input_num, output_num, delay, test_cycle
+  print('chip inputs :',input_num,'chip outputs :',output_num,'DELAY:', delay)
+  return input_num, output_num, delay
 
 def read_input_signal(input_index):
   f = open('data.txt', 'r')
@@ -27,24 +25,21 @@ def read_input_signal(input_index):
   global numlist  
   for line in data:
     if data.index(line) == input_index:
-      numlist = re.sub(r'\D','',line)
-  data_list=map(int,str(numlist))
-  if input_index > 9:
-    data_list.pop(0)
-    data_list.pop(1)
-  else:
-    data_list.pop(0)
-#  print(data_list)
-  B='{"'
-  for item in data_list:
-    B +=str(item)
-  B = B[:-1]
-  B += '"};'
-#  print(B)
+      B = get_the_sequence(line)
   f.close  
   return B
 
-
+def get_test_cycle():
+  f = open('data.txt', 'r')
+  data = f.readlines()
+  data_list = []  
+  for line in data:
+    if 'The simulation ends' in line:
+      number = re.sub(r'\D','',line)
+  f.close  
+  print('The length of testing vector:', number)
+  return number
+  
 def change_parameters(file, delay, test_cycle):
   f1=open(file,'r')
   new_f=open('%s.bak' % file,'w')
@@ -90,11 +85,24 @@ def setting_sig(line_index):
   f.close  
   return;	
 
-       
+def get_the_sequence(str):
+	if ']' in str:
+		temp = str[str.index(']')+2:len(str)-1]
+		temp = temp.replace(' ', '')
+		temp = '{' + '"' + temp + '"' + '};'
+		return temp
+	else:
+		temp = str[str.index(' ')+1:len(str)-1]
+		temp = temp.replace(' ', '')
+		temp = '{' + '"' + temp + '"' + '};'
+		return temp
+    
+           
 def excution_func():
   print('Editing c template file.')
   os.system('cp summer_final.c test.c')
-  input_num, output_num, delay, test_cycle = def_signal()
+  input_num, output_num, delay = def_signal()
+  test_cycle = get_test_cycle()
 # edit parameters
   change_parameters('test.c',delay, test_cycle)
   input_num=int(input_num)
@@ -128,13 +136,7 @@ def excution_func():
     setting_sig(line_index_i)   
   return;
 
-#read_input() 
-#change_input_array('test.c','input_4','&s_out_0')
-#def_signal()
 excution_func()
 #change_parameters('test.c',5,8)
 #setting_in()
 #setting_out()
-
-
-
