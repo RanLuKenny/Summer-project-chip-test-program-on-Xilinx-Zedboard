@@ -2,11 +2,37 @@
 import collections
 
 #python file for vcd imformation extraction
-# vcd_file_name = 'test_file.vcd'
-vcd_file_name = 'tb.vcd'
+vcd_file_name = 'top_module_tb.vcd'
+#vcd_file_name = 'tb.vcd'
 
-input_ports = ['clk', 'mr', 'd0', 'd1', 'd2', 'd3']
-output_ports = ['q0', 'q_0', 'q1', 'q_1', 'q2', 'q_2', 'q3', 'q_3']
+input_ports = []
+output_ports = []
+
+f = open(vcd_file_name)
+file_lines = []
+line = f.readline()
+while line:
+    line = f.readline()
+    remove = line.strip('\t').strip('\n')
+    if '$var' == remove[0:4]:
+        if remove[5:8]=='reg':
+            str0 = remove[13 : len(remove)-5]
+            if ':' in str0:
+                if str0 not in input_ports and str0 not in output_ports:
+                    input_ports.append(str0)
+            elif '[' not in str0:
+                if str0 not in input_ports and str0 not in output_ports:
+                    input_ports.append(str0)
+                    
+        elif remove[5:9] == 'wire':
+            str1 = remove[14 : len(remove)-5]
+            if ':' in str1:
+                if str1 not in output_ports and str1 not in input_ports:
+                    output_ports.append(str1)
+            elif '[' not in str1:
+                if str1 not in output_ports and str1 not in input_ports:
+                    output_ports.append(str1)
+f.close()
 
 ports = input_ports + output_ports
 
