@@ -6,5 +6,5 @@ os.system('python ctransf.py')
 print('File transfer finish')
 print('Compiling C file')
 os.system('gcc -o runme test.c')
-print('showing the result')
-os.system('cat result.txt')
+print('Exexutable file generated, please connect the chip')
+
