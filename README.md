@@ -1,6 +1,6 @@
 # Summer-project-chip-test-program-on-Xilinx-Zedboard
 # Coder: Ran Lu, Weixu Pan, Zihao Zhao
-# Date: 8/15/2018
+# Date: 8/12/2018
 
 This is the real silicon chip test program on Xilinx Zedboard:
 
