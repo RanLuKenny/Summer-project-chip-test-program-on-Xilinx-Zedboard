@@ -322,7 +322,7 @@ int main()
 
 	 count++;
   }
-  printf("Test finish! printing result\n");
+  printf("Test finish! Check result.txt file\n");
 
   for(i=0; i< 40; i++)
     close(fd_en[i]);
