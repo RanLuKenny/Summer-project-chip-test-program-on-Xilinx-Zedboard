@@ -36,3 +36,4 @@ There 4 steps in the program design.
 -Check the results
 
 -Video Demo: https://youtu.be/W2BSxnmt5YI
+-Report Link: https://docs.google.com/document/d/1xtXIpkAqk9DqD1nVOpvjc77o0QuROKeH2cJE9ityBUQ/edit?usp=sharing
